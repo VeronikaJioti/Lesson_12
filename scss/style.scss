@@ -1,4 +1,36 @@
-body {
-    background: aqua;
-    font-size: 18px;
+$grey: #b3b3b3;
+$light-grey:#f2f2f2;
+$primary-font:16px;
+$header-size:20px;
+
+%container {
+    display: flex;
+    width: 97%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+@mixin flex($horizontal, $vertical,$direction){
+    justify-content: $horizontal;
+    align-items: $vertical;
+    flex-direction: $direction;
+}
+
+.box{
+@extend %container;
+@include flex(space-between, left, column);
+background-color: $light-grey;
+color: $grey;
+    h1 {width: 30%;
+        font-size: $header-size;
+        
+    }
+    h2 {width: 30%;
+        font-size: $primary-font;
+    }
+    p { width: 30%;
+        text-align: center;
+        margin-top: 15px;
+        font-size: $primary-font;
+    }
+
 }
